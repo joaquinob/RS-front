@@ -5,6 +5,7 @@ import { SearchComponent } from './components/comps/search/search.component';
 import { NewTweetComponent } from './components/comps/new-tweet/new-tweet.component';
 import { LikesComponent } from './components/comps/likes/likes.component';
 import { LoginComponent } from './components/comps/login/login.component';
+import { SignupComponent } from './components/comps/signup/signup.component';
 
 export const routes: Routes = [
     {
@@ -16,7 +17,7 @@ export const routes: Routes = [
         component: ProfileComponent
     },
     {
-        path: 'logIn',
+        path: 'login',
         component: LoginComponent
     },
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path: "likes",
         component: LikesComponent
+    },
+    {
+        path: "signup",
+        component: SignupComponent
     }
 ];

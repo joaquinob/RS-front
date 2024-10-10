@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class AuthService {
 
   user: User | null = null;
-  url: string = "url de la base de datos"
+  url: string = "http://localhost:3000"
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
     if(cookieService.check('user')){
@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   login(username: string, password: string){
-    return this.http.post(`${this.url}/logIn`, {
+    return this.http.post(`${this.url}/login`, {
       username : username,
       password: password
     })
@@ -43,10 +43,5 @@ export class AuthService {
       this.user = JSON.parse(this.cookieService.get('user'))
     }
     return this.user
-  }
-
-  deleteUser(){
-    this.user = null
-    this.cookieService.delete('user')
   }
 }

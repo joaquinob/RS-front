@@ -1,1 +1,18 @@
-<p>search works!</p>
+<div class="input-group mb-3 mx-auto" style="width: 60%; margin-top: 20px;">
+    <span class="input-group-text" id="filter-addon">
+      <i class="bi bi-filter"></i>
+    </span>
+    <input type="text" class="form-control" placeholder="Filtrar" aria-label="Filtrar" aria-describedby="filter-addon">
+  </div>
+  <div>
+    <ul>
+        @for(tweet of (tweets | filter: filtro); track tweet){
+            <li>
+                <div class="card">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </li>
+        }
+    </ul>
+  </div>
